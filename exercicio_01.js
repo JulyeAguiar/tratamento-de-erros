@@ -13,6 +13,7 @@ class Animal {
     return this.atributos();
   } 
 
+
   atributos() {
     return {
       nome: this.nome,
