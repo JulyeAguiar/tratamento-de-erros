@@ -6,15 +6,22 @@ class NerdIF {
   }
 
   retornarAtributos() {
-    return this.atributos()
+    try{
+      return this.atributos()
+    } catch(erro){
+      console;console.log(erro.message)
+    }
   }
 
   atributos() {
-    return {
-      estudante: this.estudante,
-      cosplay: this.cosplay,
-      nota_cosplay: this.nota_cosplay
-    };
+    if (this.estudante != "" && this.cosplay != "" && this.nota_cosplay != "") {
+      return {
+        estudante: this.estudante,
+        cosplay: this.cosplay,
+        nota_cosplay: this.nota_cosplay
+      } } else {
+        throw new Error("Está faltando informar o estudante e/ou o cosplay e/ou a nota do cosplay. :b")
+      }
   }
 }
 
